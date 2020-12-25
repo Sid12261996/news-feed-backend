@@ -1,7 +1,7 @@
 import {NewsFeedController} from "../controller/NewsFeedController";
 import {HttpActions, IRoute} from "../Http-utils/http-utils";
 
-const routeStartWith = '/news/'
+const routeStartWith = '/api/news/'
 export const NewsFeedRoutes: IRoute[] = [{
     method: HttpActions.post,
     controller: NewsFeedController,

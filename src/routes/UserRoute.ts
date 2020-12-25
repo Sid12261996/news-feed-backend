@@ -1,7 +1,7 @@
 import {UserController} from "../controller/UserController";
 import {HttpActions, IRoute} from "../Http-utils/http-utils";
 
-const routeStart = '/user/'
+const routeStart = '/api/user/'
 export const UserRoute: IRoute[] = [{
     method: HttpActions.post,
     route: routeStart + 'signUp',
