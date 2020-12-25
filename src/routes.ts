@@ -1,23 +1,5 @@
-import {UserController} from "./controller/UserController";
+import {NewsFeedRoutes} from "./routes/NewsFeedRoutes";
+import {UserRoute} from "./routes/UserRoute";
+import {IRoute} from "./Http-utils/http-utils";
 
-export const Routes = [{
-    method: "get",
-    route: "/users",
-    controller: UserController,
-    action: "all"
-}, {
-    method: "get",
-    route: "/users/:id",
-    controller: UserController,
-    action: "one"
-}, {
-    method: "post",
-    route: "/users",
-    controller: UserController,
-    action: "save"
-}, {
-    method: "delete",
-    route: "/users/:id",
-    controller: UserController,
-    action: "remove"
-}];
+export const Routes: IRoute[] = [...UserRoute, ...NewsFeedRoutes,]
