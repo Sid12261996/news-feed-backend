@@ -6,9 +6,9 @@ export const NewsFeedRoutes: IRoute[] = [{
     method: HttpActions.post,
     controller: NewsFeedController,
     action: 'createNewsArticle',
-    route: routeStartWith + 'create'
+    route: routeStartWith + 'create/:userId'
 }, {
-    method: HttpActions.put,
+    method: HttpActions.patch,
     controller: NewsFeedController,
     action: 'updateArticle',
     route: routeStartWith

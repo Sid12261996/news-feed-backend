@@ -5,8 +5,10 @@ import {User} from "../entity/User";
 
 export class NewsFeedController {
     private newsFeedRepository = getRepository(NewsFeed);
+    private userRepository = getRepository(User);
 
     async createNewsArticle(request: Request, response: Response, next: NextFunction) {
+        request.body['user'] = await this.userRepository.findOne(request.params.userId);
         return this.newsFeedRepository.save(request.body);
     }
 
@@ -28,7 +30,7 @@ export class NewsFeedController {
     }
 
     async getAllNewsListing(request: Request, response: Response, next: NextFunction) {
-        return this.newsFeedRepository.find();
+        return this.newsFeedRepository.find({relations: ['user']});
     }
 
     async getNewsInDetail(request: Request, response: Response, next: NextFunction) {
