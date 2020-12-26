@@ -6,13 +6,13 @@ export class NewsFeed {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
+    @Column('varchar', {nullable: false, length: 100})
     title: string;
 
-    @Column()
+    @Column('varchar', {nullable: false, length: 500})
     description: string;
 
-    @Column()
+    @Column('varchar', {nullable: true})
     imageUrl: string;
 
 }

@@ -11,7 +11,7 @@ export const NewsFeedRoutes: IRoute[] = [{
     method: HttpActions.put,
     controller: NewsFeedController,
     action: 'updateArticle',
-    route: routeStartWith + ':id'
+    route: routeStartWith
 }, {
     method: HttpActions.delete,
     controller: NewsFeedController,
